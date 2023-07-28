@@ -1,0 +1,8 @@
+{
+  "name": "libfive",
+  "description": "D bindings to libfive, a library and set of tools for solid modeling, especially suited for parametric and procedural design",
+  "authors": ["Chance Snow"],
+  "copyright": "Copyright © 2023, Chance Snow",
+  "license": "MPL-2.0",
+  "targetType": "sourceLibrary"
+}
