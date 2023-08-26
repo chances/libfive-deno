@@ -40,6 +40,8 @@ alias Contours3 = Contour3[];
 
 /// An indexed 3D mesh.
 struct Mesh {
+  import std.conv : castFrom;
+
   /// Opaque pointer to C API-managed mesh.
   private libfive_mesh* mesh;
   
@@ -50,11 +52,11 @@ struct Mesh {
 
   ///
   Vec3[] verts() inout {
-    return mesh.verts[0 .. mesh.vert_count];
+    return castFrom!(inout(Vec3)[]).to!(Vec3[])(mesh.verts[0 .. mesh.vert_count]);
   }
   ///
   Tri[] tris() inout {
-    return mesh.tris[0 .. mesh.tri_count];
+    return castFrom!(inout(Tri)[]).to!(Tri[])(mesh.tris[0 .. mesh.tri_count]);
   }
 }
 
