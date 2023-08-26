@@ -4,5 +4,31 @@
   "authors": ["Chance Snow"],
   "copyright": "Copyright © 2023, Chance Snow",
   "license": "MPL-2.0",
-  "targetType": "sourceLibrary"
+  "systemDependencies": "cmake: 1.65 or later, pkg-config, Eigen: 3.3.x, Boost: 1.65 or later",
+  "sourcePaths": [
+    "source",
+    "subprojects/libfive/libfive/include",
+    "subprojects/libfive/libfive/stdlib"
+  ],
+  "targetType": "staticLibrary",
+  "targetPath": "bin",
+  "dflags": [
+    "-P-Isubprojects/libfive/libfive/include",
+    "-P-Isubprojects/libfive/libfive/stdlib"
+  ],
+  "libs": ["five"],
+  "lflags-osx": ["-L$LIBFIVE_PACKAGE_DIR/bin"],
+  "toolchainRequirements": {
+    "frontend": ">=2.102"
+  },
+  "configurations": [
+    {
+      "name": "library"
+    },
+    {
+      "name": "unittest",
+      "targetType": "executable",
+      "dflags": []
+    }
+  ]
 }
