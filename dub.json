@@ -27,7 +27,6 @@
     },
     {
       "name": "unittest",
-      "targetType": "executable",
       "dflags": []
     }
   ]

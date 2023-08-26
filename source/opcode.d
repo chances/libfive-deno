@@ -1,5 +1,6 @@
 /// License: MPL-2.0
 /// See_Also: <a href="https://github.com/libfive/libfive/blob/master/libfive/include/libfive/tree/opcode.hpp">libfive/include/libfive/tree/opcode.hpp</a>
+import stdlib;
 
 ///
 enum Opcode : int {
@@ -84,5 +85,6 @@ Opcode opcode(string op) {
 
 /// Returns: The number of arguments for the given opcode (either 0, 1, 2, or -1 if the opcode is unknown).
 int args(Opcode op) {
+  import std.conv : to;
   return libfive_opcode_args(op.to!int);
 }
