@@ -43,8 +43,9 @@ class Tree {
   /// have different IDs.
   ///
   /// This is primarily used to uniquely identify free variables, i.e. trees returned from `Tree.var`.
-  Id id() @trusted const {
-    return libfive_tree_id(castFrom!(const NativeTree).to!NativeTree(this.ptr));
+  Id id() @trusted const nothrow {
+    import std.exception : assumeWontThrow;
+    return assumeWontThrow(libfive_tree_id(cast(NativeTree) this.ptr));
   }
 
   /// This is the managed pointer. It's mutable so that the destructor can swap it out for `null` when flattening out
@@ -144,8 +145,9 @@ class Tree {
   }
 
   /// For associative arrays of `Tree`s.
-  override size_t toHash() const @nogc @safe pure nothrow {
-    return this.id.hashof;
+  override size_t toHash() const @safe nothrow {
+    return this.id.hashOf;
+    // return (cast (size_t) this.id).hashOf;
   }
   /// ditto
   bool opEquals(R)(const R other) const {
