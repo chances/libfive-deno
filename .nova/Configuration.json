@@ -1,4 +1,5 @@
 {
+  "dvelop.fmt.braceStyle" : "stroustrup",
   "prettier.format-on-save" : "Disable",
   "prettier.format-on-save.ignore-remote" : "Enable",
   "prettier.format-on-save.ignore-without-config" : "Global Default"
