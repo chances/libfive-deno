@@ -18,12 +18,16 @@
   ],
   "libs": ["five"],
   "lflags-osx": ["-L$LIBFIVE_PACKAGE_DIR/bin"],
+  "lflags-posix": ["-L$LIBFIVE_PACKAGE_DIR/bin"],
   "toolchainRequirements": {
     "frontend": ">=2.102"
   },
   "configurations": [
     {
-      "name": "library"
+      "name": "library",
+      "copyFiles-osx": ["$LIBFIVE_PACKAGE_DIR/bin/libfive.dylib"],
+      "copyFiles-posix": ["$LIBFIVE_PACKAGE_DIR/bin/libfive.so"],
+      "copyFiles-windows": ["$LIBFIVE_PACKAGE_DIR/bin/libfive.dll"]
     },
     {
       "name": "unittest",
