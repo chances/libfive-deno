@@ -163,6 +163,5 @@ unittest {
 
 /// Returns: `true` if the given tree is a free variable
 bool isVar(const Tree tree) {
-  import std.conv : castFrom;
-  return libfive_tree_is_var(castFrom!(const NativeTree).to!NativeTree(tree.ptr));
+  return libfive_tree_is_var(cast(NativeTree) tree.ptr);
 }
