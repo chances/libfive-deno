@@ -156,9 +156,11 @@ class Tree {
 }
 
 unittest {
+  assert(Tree.var().isVar);
+
   const tree = new Tree(2);
   assert(tree !is null);
-  assert(tree.isVar);
+  assert(!tree.isVar);
 }
 
 /// Returns: `true` if the given tree is a free variable
