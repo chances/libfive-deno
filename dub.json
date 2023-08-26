@@ -27,7 +27,8 @@
     },
     {
       "name": "unittest",
-      "dflags": []
+      "dflags": [],
+      "postBuildCommands-osx": ["install_name_tool -add_rpath @executable_path bin/libfive-test-unittest"]
     }
   ]
 }
