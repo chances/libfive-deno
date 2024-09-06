@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch cli.ts",
+    "gen": "make gen",
+    "build": "make libfive && deno task gen"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}

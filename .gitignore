@@ -1,0 +1,22 @@
+# Artifacts
+bin/
+
+# Dub
+.dub
+docs.json
+__dummy.html
+docs/
+/libfive
+libfive.so
+libfive.dylib
+libfive.dll
+libfive.a
+libfive.lib
+libfive-test-*
+*.exe
+*.o
+*.obj
+*.lst
+
+# Visual Studio
+.vs/

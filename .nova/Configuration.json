@@ -1,0 +1,8 @@
+{
+  "editor.default_syntax" : "typescript",
+  "prettier.format-on-save" : "Disable",
+  "prettier.format-on-save.ignore-remote" : "Enable",
+  "prettier.format-on-save.ignore-without-config" : "Global Default",
+  "workspace.color" : 1,
+  "workspace.name" : "libfive for Deno"
+}
