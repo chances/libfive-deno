@@ -1,0 +1,21 @@
+{
+  // See https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Generator",
+      "request": "launch",
+      "type": "node",
+      "program": "${workspaceFolder}/gen.ts",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "run",
+        "--inspect-brk",
+        "--allow-read=subprojects/libfive/libfive/stdlib/"
+      ],
+      "attachSimplePort": 9229
+    }
+  ]
+}

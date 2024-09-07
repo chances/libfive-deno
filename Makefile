@@ -34,13 +34,16 @@ all: libfive $(SOURCES)
 	deno task build
 
 # Generate Bindings
-gen: libfive include/libfive.json include/libfive_symbols.txt
+gen: libfive include/libfive.json include/libfive_symbols.txt include/libfive-stdlib.json
 	@deno run -A https://deno.land/x/ffigen/cli.ts --lib-name five --lib-prefix libfive_ --definitions include/libfive.json --symbols include/libfive_symbols.txt --headers "https://github.com/libfive/libfive/blob/master/libfive/include"
 .PHONY: gen
 
 include/libfive.json: libfive
 # TODO: Detect whether Docker is installed. Error if it isn't.
 	@docker run -v $(shell pwd):/data glebbash/deno-ffigen-c2ffi /data/subprojects/libfive/libfive/include/libfive.h > include/libfive.json
+
+include/libfive-stdlib.json: libfive
+	@deno run --allow-read=subprojects/libfive/ --allow-write=include/ gen.ts
 
 # TODO: bin/$(SYMBOL_LISTS): $(SYMBOL_LIST_SOURCES)
 include/libfive_symbols.txt: libfive

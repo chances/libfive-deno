@@ -5,6 +5,8 @@
     "build": "make libfive && deno task gen"
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@denosaurs/plug": "jsr:@denosaurs/plug@^1.0.6",
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/io": "jsr:@std/io@^0.224.7"
   }
 }
